@@ -9,8 +9,8 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>cloud-config-center-3344</artifactId>
-    <description>Cloud的配置中心模块cloudConfig Center</description>
+    <artifactId>cloud-config-client-3366</artifactId>
+    <description>config客户端</description>
 
     <dependencies>
         <!--添加消息总线RabbitMQ支持-->
@@ -18,10 +18,10 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-bus-amqp</artifactId>
         </dependency>
-        <!--config-server-->
+        <!--config客户端-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-config-server</artifactId>
+            <artifactId>spring-cloud-starter-config</artifactId>
         </dependency>
         <!--eureka client-->
         <dependency>
