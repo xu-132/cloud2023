@@ -13,6 +13,12 @@
     <description>sentinel初始化演示功能模块 sentinel8080监控微服务8401</description>
 
     <dependencies>
+        <!--引入自己定义的api通用包，可以使用payment支付Entity -->
+        <dependency>
+            <groupId>com.mylearn.springcloud</groupId>
+            <artifactId>cloud-api-common</artifactId>
+            <version>${project.version}</version>
+        </dependency>
         <!--SpringCloud alibaba nacos-->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
