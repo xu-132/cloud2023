@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--mybatis-3-mapper.dtd:约束文件的名称，限制和检查在当前文件中出现的标签和属性符合mybatis的要求-->
+<!--namespace：命名空间，要有唯一的值，要求使用dao接口的权限定名称（一个dao接口对应一个mapper，namespace指明对应哪个dao接口）-->
+<mapper namespace="com.mylearn.springcloud.alibaba.dao.AccountDao">
+   <resultMap id="BaseResultMap" type="com.mylearn.springcloud.alibaba.domain.Account">
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <result column="user_id" property="userId" jdbcType="BIGINT"/>
+        <result column="total" property="total" jdbcType="DECIMAL"/>
+        <result column="used" property="used" jdbcType="DECIMAL"/>
+        <result column="residue" property="residue" jdbcType="DECIMAL"/>
+   </resultMap>
+
+   <update id="decrease">
+      update
+          t_account
+      set
+          residue = residue - #{money},used = used + #{money}
+      where
+          user_id = #{userId};
+   </update>
+</mapper>

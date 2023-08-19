@@ -5,6 +5,7 @@ import com.mylearn.springcloud.alibaba.domain.Order;
 import com.mylearn.springcloud.alibaba.service.AccountService;
 import com.mylearn.springcloud.alibaba.service.OrderService;
 import com.mylearn.springcloud.alibaba.service.StorageService;
+import io.seata.spring.annotation.GlobalTransactional;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -31,6 +32,7 @@ public class OrderServiceImpl implements OrderService {
      * @param order
      */
     @Override
+    @GlobalTransactional(name = "mylearn-create-order",rollbackFor = Exception.class) //只要有异常，统统回滚；name随便，只要唯一性
     public void create(Order order) {
         log.info("----->开始新建订单");
         //1 新建订单
